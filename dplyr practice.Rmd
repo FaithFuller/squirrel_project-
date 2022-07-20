@@ -1,0 +1,25 @@
+---
+title: "dplyr practice"
+author: "Faith Fuller"
+date: '2022-07-15'
+output: html_document
+---
+
+Practice with dplyr! (7/15/22)
+
+```{r}
+## Load Data
+squirrels <- read.csv("data/nyc_squirrels.csv")
+View(squirrels)
+```
+
+```{r}
+## Filter based on 1 or 2 variables
+# This code removes any data about a squirrels color that is 
+#not available
+tidy.squ_color <- filter(squirrels, !is.na(color_notes) &
+                             !is.na(highlight_fur_color) &
+                             !is.na(primary_fur_color)) 
+View(tidy.squ_color)
+
+```
